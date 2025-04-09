@@ -61,4 +61,12 @@ public class TransactionController {
 	    return transactionService.linkTransactionToAccount(accId, tid);
 	}
 
+	 @GetMapping("/getFilteredTransactions")
+	    public List<Transaction> getFilteredTransactions(
+	            @RequestParam(required = false) String type,
+	            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+	            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end) {
+
+	        return transactionService.getFilteredTransactions(type, start, end);
+	    }
 }

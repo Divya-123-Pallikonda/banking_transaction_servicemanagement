@@ -57,6 +57,9 @@ public class TransactionDao {
 		    transaction.setAccount(account);
 		    return transactionRepo.save(transaction);
 		}
+	  public List<Transaction> getFilteredTransactions(String type, LocalDateTime start, LocalDateTime end) {
+		        return transactionRepo.findFiltered(type, start, end);
+		    }
 }
 
 

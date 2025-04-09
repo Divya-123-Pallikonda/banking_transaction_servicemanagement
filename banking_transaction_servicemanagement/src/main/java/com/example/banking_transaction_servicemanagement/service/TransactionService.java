@@ -96,5 +96,8 @@ public class TransactionService {
 		    return transactionRepo.save(transaction);
 		}
 
+	 public List<Transaction> getFilteredTransactions(String type, LocalDateTime start, LocalDateTime end) {
+		        return transactionDao.getFilteredTransactions(type, start, end);
+
 }
 
